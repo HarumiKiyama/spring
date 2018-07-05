@@ -1,3 +1,4 @@
 /.gitmessage
 .gradle/
 .meghanada/
+build/
