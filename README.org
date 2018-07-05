@@ -1,0 +1,1 @@
+[[https://travis-ci.org/HarumiKiyama/spring.svg?branch=master][https://travis-ci.org/HarumiKiyama/spring]]
