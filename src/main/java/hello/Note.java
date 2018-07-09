@@ -13,25 +13,25 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name = "notes")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(
-    value = {"createdAt", "updatedAt"},
-    allowGetters = true)
-public class Note implements Serializable {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+                      value = {"createdAt", "updatedAt"},
+                      allowGetters = true)
+                      public class Note implements Serializable {
+                          @Id
+                          @GeneratedValue(strategy = GenerationType.IDENTITY)
+                          private Long id;
 
-  @NotBlank private String title;
+                          @NotBlank private String title;
 
-  @NotBlank private String content;
+                          @NotBlank private String content;
 
-  @Column(nullable = false, updatable = false)
-  @Temporal(TemporalType.TIMESTAMP)
-  @CreatedDate
-  private Date createdAt;
+                          @Column(nullable = false, updatable = false)
+                          @Temporal(TemporalType.TIMESTAMP)
+                          @CreatedDate
+                          private Date createdAt;
 
-  @Column(nullable = false)
-  @Temporal(TemporalType.TIMESTAMP)
-  @LastModifiedDate
-  private Date updatedAt;
+                          @Column(nullable = false)
+                          @Temporal(TemporalType.TIMESTAMP)
+                          @LastModifiedDate
+                          private Date updatedAt;
 
-}
+                      }
