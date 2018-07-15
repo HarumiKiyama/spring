@@ -1,4 +1,4 @@
-package hello;
+package pers.spring.exercise;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

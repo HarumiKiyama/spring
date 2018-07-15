@@ -1,4 +1,4 @@
-package hello;
+package pers.spring.exercise;
 
 import org.junit.Before;
 import org.junit.Test;

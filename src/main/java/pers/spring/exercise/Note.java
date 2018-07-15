@@ -1,4 +1,4 @@
-package hello;
+package pers.spring.exercise;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;
