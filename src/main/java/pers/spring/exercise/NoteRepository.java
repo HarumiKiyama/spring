@@ -8,4 +8,3 @@ public interface NoteRepository extends JpaRepository<Note, Long> {
 }
 
 
-

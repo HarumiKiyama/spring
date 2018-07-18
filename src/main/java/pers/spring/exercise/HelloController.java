@@ -10,6 +10,9 @@ public class HelloController {
     @Autowired
     NoteRepository noteRepository;
 
+    @Autowired
+    NoteRedisRepository noteRedisRepository;
+
     @RequestMapping("/")
     public String index() {
         String s = "Greetings from Spring Boot!";
@@ -17,6 +20,10 @@ public class HelloController {
         note.title = s;
         note.content = s;
         noteRepository.save(note);
+        NoteRedis noteRedis = new NoteRedis();
+        noteRedis.title = s;
+        noteRedis.content = s;
+        noteRedisRepository.save(noteRedis);
         return s;
     }
 

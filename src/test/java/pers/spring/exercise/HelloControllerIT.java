@@ -23,6 +23,10 @@ public class HelloControllerIT {
     TestRestTemplate template;
     @Autowired
     NoteRepository noteRepository;
+
+    @Autowired
+    NoteRedisRepository noteRedisRepository;
+
     @LocalServerPort
     private int port;
     private URL base;
@@ -35,9 +39,12 @@ public class HelloControllerIT {
     @Test
     public void getHello() throws Exception {
         ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-        assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+        String s = "Greetings from Spring Boot!";
+        assertThat(response.getBody(), equalTo(s));
         Note note = noteRepository.findById(1L).get();
-        assertThat(note.title, equalTo("Greetings from Spring Boot!"));
-        assertThat(note.content, equalTo("Greetings from Spring Boot!"));
+        assertThat(note.title, equalTo(s));
+        assertThat(note.content, equalTo(s));
+        long t = noteRedisRepository.count();
+        assertThat(1L, equalTo(t));
     }
 }
